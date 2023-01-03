@@ -1,0 +1,323 @@
+Manaus, 18 de Julho de 2022.
+
+figma
+https://www.figma.com/community/file/1130846653327904117
+
+Instalando Expo
+https://efficient-sloth-d85.notion.site/Instalando-Expo-a4042eaea57d40fabeeaa2e462424ff0
+
+github
+10+ - https://github.com/wfl-junior/rocketseat-ignite-lab-react-native
+10 - https://github.com/frantecbh/rockethelp
+https://github.com/RanielliMontagna/rockethelp
+https://github.com/rocketseat-education/ignite-lab-rockethelp
+https://github.com/mateusabelli/rocket-help
+https://github.com/matheusobarboza/rockethelp
+
+- expo init rockethelp2
+- escolher a minimal
+
+cd rockethelp2
+
+- 3 passos passar para typescript
+    1 - app.js -> app. tsx
+    2 - criar na raiz tsconfig.json (instala o typescript)
+    3 - iniciar o projeto e dizer (y) sim para instalar o typescript
+
+    expo start
+
+    expo start --clear
+    del %appdata%\Temp/<cache>
+
+*** installation
+yarn add native-base
+expo install react-native-svg
+expo install react-native-safe-area-context
+expo install expo-font @expo-google-fonts/roboto
+yarn add --dev react-native-svg-transformer
+yarn add phosphor-react-native
+
+    shift + d (alterna para abilitar e desablitar as ferrramentas do desenvolvedor)
+    d
+    a
+
+    Extencoes
+    Material Icon Theme
+
+    Passar para o Pedro:
+    https://app.rocketseat.com.br/
+    Discover (bem em cima do topo)
+        Especializar 
+            Fundamentos typescript e ReactJS
+
+
+    https://nativebase.io/ ( STYLES )
+        Get Started
+            installation
+                - yarn add native-base
+                - expo install react-native-svg
+                - expo install react-native-safe-area-context
+
+        https://docs.nativebase.io/design-tokens
+        https://docs.nativebase.io/default-theme
+
+        
+        expo start
+
+        
+    https://docs.expo.dev/guides/using-custom-fonts/
+
+    expo install expo-font @expo-google-fonts/roboto
+
+    https://github.com/kristerkari/react-native-svg-transformer
+    yarn add --dev react-native-svg-transformer
+
+*** metro.config.js
+    const { getDefaultConfig } = require("expo/metro-config");
+
+    module.exports = (() => {
+    const config = getDefaultConfig(__dirname);
+
+    const { transformer, resolver } = config;
+
+    config.transformer = {
+        ...transformer,
+        babelTransformerPath: require.resolve("react-native-svg-transformer"),
+    };
+    config.resolver = {
+        ...resolver,
+        assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+        sourceExts: [...resolver.sourceExts, "svg"],
+    };
+
+    return config;
+    })();
+
+*** src/@types/svg.d.ts
+    declare module "*.svg" {
+    import React from 'react';
+    import { SvgProps } from "react-native-svg";
+    const content: React.FC<SvgProps>;
+    export default content;
+    }
+
+
+    Extencoes
+    R Component - rodrigorgtic
+
+
+    https://phosphoricons.com/
+    https://github.com/duongdev/phosphor-react-native
+
+    yarn add phosphor-react-native
+
+Manaus, 20 de Julho de 2022.
+
+    expo start
+
+    00:58:27 
+    react Navigation - https://reactnavigation.org/
+    /getting-started
+
+    yarn add @react-navigation/native
+    expo install react-native-safe-area-context (ja foi instalado)
+    expo install react-native-screens 
+
+    no final Hello React Navigation
+    yarn add @react-navigation/native-stack
+
+    Extrategio de navegacao:
+    Tab navigation
+    Drawer navigation (show de bola)
+
+
+Criar banco no firebase - rockethelp
+
+    marcell.souza@prolam.com / J@
+
+    https://rnfirebase.io/
+    Getting Started
+
+    yarn add @react-native-firebase/app
+
+    Expo
+    React Native Firebase cannot be used in the "Expo Go" app, because it requires custom native code.
+
+    https://rnfirebase.io/#expo
+
+    firebase SDK
+    https://docs.expo.dev/guides/setup-native-firebase/
+    app.json (modificado) 00:33:00
+    "plugins": [
+      "@react-native-firebase/app"
+    ]
+
+    GoogleService-Info.plist (adicionado) 00:37:59
+    google-services.json (adicionado) 
+
+    Execualar o comando.
+    expo prebuild 00:39:23
+
+    Ultimo video:
+    Inicio: 00:30:00
+    Final: 00:40:52
+
+    yarn add @react-native-firebase/firestore
+
+    yarn add @react-native-firebase/auth
+
+Manaus, 22 de Julho de 2022
+
+    npx react-native run-android
+
+    PAREI: 1:47:41
+
+
+
+
+
+    *** ERROS: Trouble Shooting ***
+
+    npm i (instalar tudo)
+    node index.js
+
+    expo run:android
+    npx react-native run-android
+
+    git --version (2.37.1.)
+    node -v (16.16.0)
+    npm -v (8.14.0.)
+    expo --version (5.5.1.)
+
+    Iniciando o Emulador: 
+    adb start-server
+    adb kill-server
+    adb devices (lista)
+    	List of devices attached
+        emulador-5554   device (device ok)
+
+    Para limpar o cache
+    cd android && ./gradlew clean && cd ..
+
+Executar um codigo gitHub
+
+1) baixei o codigo
+2) npm i ou yarn
+3) O que fasso agora?
+npx react-native start
+npx react-native run-android
+
+
+netstat -ano | findstr :5037
+  TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       8596
+  TCP    127.0.0.1:5037         127.0.0.1:50484        ESTABLISHED     8596
+  TCP    127.0.0.1:5037         127.0.0.1:52182        TIME_WAIT       0
+  TCP    127.0.0.1:50378        0.0.0.0:0              LISTENING       15856
+  TCP    127.0.0.1:50484        127.0.0.1:5037         ESTABLISHED     15856
+
+
+
+
+
+
+*** APK ***
+
+Por padrão existe um APK na pasta "...\android\app\build\outputs\apk\debug" 
+
+que é gerado para instalar o app no emulador durante o processo de desenvolvimento
+
+---- Atualizar Gradle ----
+
+1) confira a versão atual do seu gradle (dentro da pasta android)
+./gradlew --version
+
+2) No site "gradle.org/releases" confira a versão mais atual.
+    digite o comando: (dentro da pasta android)
+    ./gradlew wrapper --gradle-version 6.7.1 (ou a última versão disponível --> v7.4.2 )
+
+3) Digite novamente o comando "./gradlew --version" 
+para completar o download e verificar a versão atualizada
+
+-------------------------
+
+1 - Entre na pasta do aplicativo ( cd..)
+
+2 - Rode os comandos abaixo para gerar os arquivo de keystore (chave).
+    Uma linha de comando de cada vez: 
+
+    keytool -genkeypair -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+    123456
+    123456
+    Marcell Souza
+    Souza LTDA
+    Souza LTDA
+    Manasus
+    Amazonas
+    br
+    sim
+    123456
+    123456
+    - Gera o arquivo na pasta do projeto: my-upload-key.keystore
+
+    keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+    123456
+    123456
+    Marcell Souza
+    Souza LTDA
+    Souza LTDA
+    Manasus
+    Amazonas
+    br
+    sim
+    123456
+    123456
+    - Gera o arquivo na pasta do projeto: my-release-key.keystore
+
+ 2.2 - Ao finalizar serão gerados os arquivos das chaves na pasta ao app 
+    (my-release-key.keystore  e  my-upload-key.keystore).
+
+3 - Copie as chaves e cole na pasta app que fica dentro da pasta android do seu projeto
+    {seuApp}\android\app
+
+4 - Agora vamos configurar as váriaveis do Gradle
+    4.1 - Na pasta android do seu projeto ( {seuApp}\android ) 
+    no arquivo gradle.properties insira os comandos a seguir:
+ 
+    MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+    MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+    MYAPP_UPLOAD_STORE_PASSWORD=123456 (Senha que vc digitou antes)
+    MYAPP_UPLOAD_KEY_PASSWORD=123456 (Senha que vc digitou antes)
+
+5 - Na pasta ( {seuApp}\android\app ) no arquivo build.gradle 
+    insira os comandos dentro de android {signingConfigs} 
+    --> depois do   }   do debug
+
+    release {
+                if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                    storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                    storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                    keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                    keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+                }
+            }
+
+5.1 - {seuApp}\android\app ) no arquivo build.gradle (dentro do buildTypes)
+   (Adicionar a linha abaixo)
+    release {
+    signingConfig signingConfigs.release
+    }
+
+6 - Gerando o arquivo APK
+
+    No prompt digite o comando dentro da pasta ( Android ) do seu App digite:
+    (9 minutos um sistema pequeno) Build Successfull
+    ./gradlew assembleRelease
+
+    Para gerar o AAB para publicar na google play digite o comando:
+    ./gradlew bundleRelease
+
+7 - O APK se encontrará na pasta
+    ...\android\app\build\outputs\apk\release
+
+8 - O AAB se encontrará na pasta
+    ...\android\app\build\outputs\bundle\release

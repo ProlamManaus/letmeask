@@ -1,0 +1,330 @@
+### Manaus, 26 de Dezembro de 2022.
+### Ignite Lab de React Native _ Aula 2 - O início da especialização em React Native
+
+*** Criar o projeto ***
+    expo init prolamsys (prolamsee)
+    escolher: minimal - bare and minimal, just the essentials to get you started
+
+*** 3 passos, para typescript:
+
+    cd prolamsys (melhor fechar e abrir o vscode no prolamsys)
+
+    1 - trocar a extensão: app.js -> app. tsx
+    2 - criar na raiz tsconfig.json (instala o typescript)
+
+    expo start ( 00 : 24 : 34 )
+    3 - iniciar o projeto e dizer (y) sim para instalar o typescript
+
+    shift + d ( 00 : 26 : 00 )
+    (alterna para habilitar e desabilitar as ferramentas do desenvolvedor)
+    d - desabilitar
+    a - habilitar
+
+*** Arquivo: index.js ( 00 : 30 : 00 )
+*** Arquivo: App.tsx 
+              Prolam sistema 2023!
+
+*** Extensões VSCode ( 00 : 36 : 34 )
+    Material Icon Theme
+
+*** Instalação de componentes | biblioteca ***  ( 00 : 44 : 00 )
+    https://nativebase.io/ ( STYLES ) Get Started
+    https://docs.nativebase.io/design-tokens
+    https://docs.nativebase.io/default-theme (ver as cores)
+    yarn add native-base
+    expo install react-native-svg
+    expo install react-native-safe-area-context
+
+*** Instalação de componentes | biblioteca ***  ( 00 : 57 : 00 )
+    https://docs.expo.dev/guides/using-custom-fonts
+    expo install expo-font @expo-google-fonts/roboto
+
+*** Instalação de componentes | biblioteca ***  ( 01 : 06 : 18 )
+    https://github.com/kristerkari/react-native-svg-transformer
+    npm i react-native-svg-transformer --save-dev
+
+*** metro.config.js ( 01 : 07 : 22 )
+    https://docs.expo.io/guides/customizing-metro
+
+    const { getDefaultConfig } = require('expo/metro-config')
+    module.exports = (() => {
+    const config = getDefaultConfig(__dirname)
+    const { transformer, resolver } = config
+    config.transformer = {
+        ...transformer,
+        babelTransformerPath: require.resolve(
+        'react-native-svg-transformer'
+        ),
+    }
+    config.resolver = {
+        ...resolver,
+        assetExts: resolver.assetExts.filter(
+        (ext) => ext !== 'svg'
+        ),
+        sourceExts: [...resolver.sourceExts, 'svg'],
+    }
+    return config
+    })()
+
+*** src/@types/svg.d.ts
+    pasta @Types
+
+    yarn add --dev react-native-svg-transformer
+
+*** Extensões ( 01 : 10 : 30 )
+    R Component - rodrigorgtic
+
+    Snippet	Content
+    rnbc →	Create a new React Native Basic Component
+    rnso →	Create a new React Native Stylesheet Component
+    rnsc →	Create a new React Native Component with Styled Component
+    rnscs →	Create a new Styled Component File
+    rnsctc →	Get the path to color theme props
+    rnsctf →	Get the path to fonts theme props
+    nbc →	Create Native Base Component
+
+*** Instalação de componentes | biblioteca ***  ( 01 : 18 : 43 )
+    https://phosphoricons.com/
+    https://github.com/duongdev/phosphor-react-native
+    yarn add phosphor-react-native (recarregar a aplicação)
+
+
+### Manaus, 28 de Dezembro de 2022.
+### Ignite Lab de React Native _ Aula 3 - Estrutura visual e Navegação.mp4
+
+*** Instalação de componentes | biblioteca ***  ( 00 : 58 : 27 )
+    react Navigation - https://reactnavigation.org/
+    /getting-started
+    yarn add @react-navigation/native
+    expo install react-native-safe-area-context (ja foi instalado)
+    expo install react-native-screens 
+    yarn add @react-navigation/native-stack (no final Hello React Navigation)
+
+    Estrategia de navegação: Tab navigation
+    Drawer navigation (show de bola)
+
+
+### Manaus, 29 de Dezembro de 2022.
+### Ignite Lab de React Native _ Aula 4 - Integração com Firebase e finalização.mp4
+
+*** Criar banco no firebase - prolamsys ( 00 : 16 : 27 )
+    https://console.firebase.google.com
+    manaus.prolam@gmail.com / J@
+
+    * Criar um projeto ( 00 : 19 : 00 )
+      Nome do projeto: prolamsys (criar projeto)
+      Seu novo projeto está pronto (Continuar)
+
+    * Authentication
+      Vamos começar
+      E-mail/senha (Ativar e Salvar)
+      Aba (Users), Adicionar usuário
+      marcell.souza@prolam.com.br | J@ (29/12/2022)
+      ID: Jvp4ibPe3hfDHOOV0SqfBQnPiqE2 (29/12/2022)
+      IS: lQRdnDz792cWX5oyhT7jqpvEFL02 (30/12/2022) Atual
+
+    * Firestore Database
+      Criar banco de dados (Modulo de teste)
+      Ativar
+      Aba (regras) Mudei para mes 6 (todos podem ler e escrever)
+      request.time < timestamp.date(2023, 6, 28);
+      Publicar
+
+*** Criar banco no firebase - prolamsys ( 00 : 26 : 00 )
+    https://rnfirebase.io/ (Getting Started)
+    yarn add @react-native-firebase/app
+
+    Expo (conteudo didático)
+    React Native Firebase cannot be used in the "Expo Go" app, because it requires custom native code.
+    https://rnfirebase.io/#expo
+
+    firebase SDK *** (Inicio da configuração automatizada) *** 1212
+    https://docs.expo.dev/guides/setup-native-firebase/
+    app.json (modificado) ( 00 : 33 : 00 ) 
+    "plugins": [
+      "@react-native-firebase/app"
+    ]
+
+*** Antes de rodar o expo prebuild ***
+    Visão gera do projeto
+    iOS ( 00 : 35 : 52 ) 
+        com.prolamsys
+        iOS
+        Registrar app
+        Fazer o download de GoogleService-info.plist
+        Copiar o arquivo: GoogleService-Info.plist para pasta do projeto.
+        Proximo, Proximo, Proximo e Continuar no console.
+
+    Android ( 00 : 37 : 15 )       
+        + Adicionar app
+        Android
+        com.prolamsys
+        Android
+        Registrar app
+        Fazer o download de google-services.json
+        Copiar o arquivo: google-services.json para pasta do projeto.
+        Proximo, Proximo, Proximo e Continuar no console.
+
+    app.json (modificado) ( 00 : 38 : 14 ) 
+    "android": {
+      "package": "com.prolamsys",
+      "googleServicesFile": "./google-services.json"
+    },
+    "ios": {
+      "bundleIdentifier": "com.prolamsys",
+      "googleServicesFile": "./GoogleService-Info.plist"
+    }
+
+*** Executar o comando ( 00 : 34 : 30 ) | 2° vez ( 00 : 39 : 24 ) 
+    expo prebuild 
+    mudar nome: com.prolamsys
+
+*** Instalação de componentes | biblioteca ***  ( 00 : 41 : 20 )
+    yarn add @react-native-firebase/firestore
+    yarn add @react-native-firebase/auth
+
+
+*** implementar a autenticação *** ( 00 : 42 : 55 )
+
+*** Start sistema *** ( expo start --clear ) ==> cd android && ./gradlew clean
+    expo run:android ( 00 : 46 : 25 )
+
+
+### Manaus, 02 de Janeiro de 2023.
+### Ignite Lab de React Native _ Aula 4 - Integração com Firebase e finalização.mp4
+
+    Não cadastra (voltei o código template)
+    expo run:android (2 vez deu certo)
+
+
+
+
+
+
+
+Firebase
+marcell.souza@prolam.com.br | J@ (29/12/2022)
+
+expo run:android
+
+*** Erros: troubleshoot *** (rodar fora do expo go) *** 1212
+    Ignite Lab de React Native _ Aula 4 - Integração com Firebase e finalização.mp4
+    ( 00 : 46 : 10 )
+    expo start
+    expo run:android
+    npx react-native run-android
+    npx react-native start
+
+    expo start --clear
+    del %appdata%\Temp/<cache>
+
+
+    npm i (instalar tudo)
+    node index.js
+
+    git --version (2.37.1.)
+    node -v (16.16.0) ***
+    npm -v (8.14.0.)
+    expo --version (5.5.1.)
+
+
+    Iniciando o Emulador: 
+
+    adb start-server
+    adb kill-server
+    adb devices (lista)
+    	List of devices attached
+        emulador-5554   device (device ok)
+
+    Para limpar o cache
+    cd android && ./gradlew clean && cd ..
+
+    Executar um código gitHub
+    1) baixei o código
+    2) npm i ou yarn
+    3) O que faço agora?
+    npx react-native start
+    npx react-native run-android
+
+
+*** Warning
+    @react-native-firebase/app@15.7.1: This was intended as the 16.0.0 release,
+    please remain on 15.7.0 or use 16.0.0.
+    
+
+
+### Manaus, 30 de Dezembro de 2022.
+### Ignite Lab de React Native _ Aula 4 - Integração com Firebase e finalização.mp4
+    expo run:android ( 00 : 46 : 25 )
+
+    *** ERRO ***
+    > Task :app:compileDebugJavaWithJavac FAILED 
+
+    *** Tentando ***
+    cd android && ./gradlew clean (não deu certo)
+
+    ./gradlew -stop 
+    dentro android pasta está funcionando para mim (não deu certo)
+
+    npm install -g expo-cli
+
+
+TROCAR O NOME DO PROJETO. (não funcionou)
+    react-native-rename nomeDoProjeto -b com.mycompany
+    react-native-rename prolamsee -b com.prolamsee
+    npm install -G react-native-rename
+    expo init prolamsee
+
+
+RESUMO:
+
+    yarn add native-base phosphor-react-native @react-navigation/native @react-navigation/native-stack --dev react-native-svg-transformer
+
+    yarn add native-base
+    yarn add phosphor-react-native
+    yarn add @react-navigation/native
+    yarn add @react-navigation/native-stack
+    yarn add --dev react-native-svg-transformer
+
+    expo install react-native-svg
+    expo install react-native-screens 
+    expo install react-native-safe-area-context
+    expo install expo-font @expo-google-fonts/roboto
+
+    Trocar o nome do projeto para: prolamsee
+    expo prebuild 
+    expo run:android
+
+
+    README.md
+    [![Linkedin Badge](https://img.shields.io/badge/-Rodrigo%20Gonçalves%20Santana-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rodrigo-gon%C3%A7alves-santana/)](https://www.linkedin.com/in/rodrigo-gon%C3%A7alves-santana/) 
+    </div>
+
+*** Gerando APK
+
+    https://www.youtube.com/watch?v=wYMvzbfBdYI
+    docs.expo.io/versions/lates/distribution/building-standalone-apps
+    (404: Not Found)
+
+    https://docs.expo.dev/archive/classic-updates/building-standalone-apps/
+
+
+    *** Instalação de componentes | biblioteca ***
+    npm install -g eas-cli
+    eas login
+    marcell.ramos@gmail.com J@
+    eas build:configure (y,y)
+
+    * Instalar celular
+    expo build:android -t apk
+
+
+    * Carregar na loja
+    expo build:android -t app-bundle
+    Gererate new keystore (novo projeto)
+
+    expo app.json reference
+    rocketseat rsxp-mobile
+
+
+

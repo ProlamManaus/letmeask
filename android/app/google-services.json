@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "741212488940",
+    "project_id": "prolamsee",
+    "storage_bucket": "prolamsee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741212488940:android:20c91e4d4866353440d1c9",
+        "android_client_info": {
+          "package_name": "com.prolamsee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741212488940-ophi8elnppomi44mi05nbafp29rstffn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlkxb9FWa7bGgrrz2wWwQfdzoMHp-A1M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741212488940-ophi8elnppomi44mi05nbafp29rstffn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "741212488940-rfu4odf88a8hg8qeip25ai35ubtepelu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.prolamsee"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

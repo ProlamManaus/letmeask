@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "prolamsee",
+    "slug": "prolamsee",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": [
+      "@react-native-firebase/app"
+    ],
+    "android": {
+      "package": "com.prolamsee",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 1
+    },
+    "ios": {
+      "bundleIdentifier": "com.prolamsee",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "buildNumber": "1.0.0"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "363aa1b1-9139-4eb1-bef5-c5a835c392ce"
+      }
+    }
+  }
+}
