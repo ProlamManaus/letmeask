@@ -335,8 +335,12 @@ RESUMO:
 
 
     erro: expo build:android has been discontinued (January 4, 2023).
+*** Solução ***
+    Arquivo: eas.json
+    "requireCommit": true
 
-
+    eas build --platform android
+    
     Gerar a chave
     https://developer.android.com/studio/publish/app-signing#generate-key
 
