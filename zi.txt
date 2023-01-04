@@ -308,20 +308,54 @@ RESUMO:
 
     https://docs.expo.dev/archive/classic-updates/building-standalone-apps/
 
-
     *** Instalação de componentes | biblioteca ***
     npm install -g eas-cli
     eas login
     marcell.ramos@gmail.com J@
-    eas build:configure (y,y)
+    eas build:configure (y, y e nomeprojeto)
+    https://expo.fyi/eas-build-archive
+
+    *** Instalação de componentes | biblioteca ***
+    npx expo install expo-updates
+
+    *** Instalação de componentes | biblioteca ***
+    npx pod-install
+
+    Erro:
+    The `keytool` utility was not found in your PATH. A new Keystore will be generated on Expo servers.
+    Solução:
+
+    keytool -list -v -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+    keytool -list -v -alias androiddebugkey -keystore C:\sys\DEV\Android Studio\debug.keystore
+
+    keytool -list -v -exportcert -keystore C:\Users\marcell.souza\.android\debug.keystore 
+    keytool -list -v -exportcert -alias androiddebugkey -keystore C:\Users\marcell.souza\.android\debug.keystore 
+
+    keytool -list -v -keystore C:\Users\marcell.souza\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+
+    erro: expo build:android has been discontinued (January 4, 2023).
+
+
+    Gerar a chave
+    https://developer.android.com/studio/publish/app-signing#generate-key
+
+    marcell_keystore / JC#
+    C:\sys\DEV\Android Studio
 
     * Instalar celular
     expo build:android -t apk
+    Gererate new keystore (novo projeto)
+
+    Novo comando
+    eas build --platform android
+    eas build:list
 
 
     * Carregar na loja
     expo build:android -t app-bundle
-    Gererate new keystore (novo projeto)
+
+
 
     expo app.json reference
     rocketseat rsxp-mobile
