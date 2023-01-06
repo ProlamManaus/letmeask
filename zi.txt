@@ -165,6 +165,30 @@
         Copiar o arquivo: google-services.json para pasta do projeto.
         Proximo, Proximo, Proximo e Continuar no console.
 
+    Web ( xx )  
+        + Adicionar app
+        web
+        prolamsee
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTUCFPUN8BoW9R95qRFlxR1Oq-Ty_3J34",
+            authDomain: "prolamsee.firebaseapp.com",
+            projectId: "prolamsee",
+            storageBucket: "prolamsee.appspot.com",
+            messagingSenderId: "741212488940",
+            appId: "1:741212488940:web:457446c1bb479df440d1c9"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+
     app.json (modificado) ( 00 : 38 : 14 ) 
     "android": {
       "package": "com.prolamsys",
@@ -200,12 +224,17 @@
 
 
 
-
+@souzamarcell/prolamsee
 
 Firebase
 marcell.souza@prolam.com.br | J@ (29/12/2022)
 
+Expo
+marcell.souza@prolam.com.br | J@ (29/12/2022)
+user: souzamarcell
+
 expo run:android
+
 
 *** Erros: troubleshoot *** (rodar fora do expo go) *** 1212
     Ignite Lab de React Native _ Aula 4 - Integração com Firebase e finalização.mp4
@@ -315,6 +344,10 @@ RESUMO:
     eas build:configure (y, y e nomeprojeto)
     https://expo.fyi/eas-build-archive
 
+
+    eas build --platform android
+
+
     *** Instalação de componentes | biblioteca ***
     npx expo install expo-updates
 
@@ -355,14 +388,34 @@ RESUMO:
     eas build --platform android
     eas build:list
 
-
     * Carregar na loja
     expo build:android -t app-bundle
-
-
 
     expo app.json reference
     rocketseat rsxp-mobile
 
 
+Deploy a web app on Google Firebase
+hospedar 
+https://www.youtube.com/watch?v=TfwUjFBVi-g
 
+Quiz (apenas visual mobile)
+https://www.youtube.com/watch?v=i51SpN7jsck
+
+Quiz (completo mobile)
+https://www.youtube.com/watch?v=85TYivlkuiA
+https://github.com/RushikeshVidhate/react-native-quiz-app
+
+Quiz (nota 6.5 - mobile)
+https://www.youtube.com/watch?v=Vk5PpC0gNnA
+https://github.com/shuvamk/Quizzler
+
+How to make MCQ APP in Android Studio 2020 | Part 1-35 | Google Sign In
+https://www.youtube.com/watch?v=ecLtZ_75jBo&list=PLnfB3OWST3K3lEQmiRR6LhbqdgzTEy8_B&index=8
+
+
+
+Firestore Web - Parte 1 - Configurando Projeto com Firebase
+https://www.youtube.com/watch?v=oFp7twsVEiE
+https://www.youtube.com/watch?v=15zjIp2LV70
+https://jafapps.com.br/?doing_wp_cron=1672937394.6823909282684326171875
