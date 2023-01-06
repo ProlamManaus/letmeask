@@ -53,9 +53,9 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 | :---: |
  
 <p align="left">
-    <!-- <a href="https://www.linkedin.com/in/marcellsouza/">
+    <a href="https://www.linkedin.com/in/marcellsouza/">
         <img alt="Marcell Souza / Linkedin" src="https://img.shields.io/badge/-Marcell Souza-835afd?style=flat&logo=Linkedin&logoColor=fff" />
-    </a> -->
+    </a>
     <a href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSGLCKpKJfwPsKKqzXBplKkGtCLvCQcFWdWxCxQFfkHzzjVkgzrMFPBgKBmWFHvrjrCsMqSH">
         <img alt="Marcell Souza / Linkedin" src="https://img.shields.io/badge/-Marcell Souza-ff59f8?style=flat&logo=Gmail&logoColor=fff" />
     </a>
@@ -63,5 +63,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 
 
-[![Linkedin Badge](https://img.shields.io/badge/-Marcell%20Ramos%20de%20Souza-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/marcellsouza/)](https://www.linkedin.com/in/marcellsouza/) 
-</div>
+<!-- [![Linkedin Badge](https://img.shields.io/badge/-Marcell%20Souza-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/marcellsouza/)](https://www.linkedin.com/in/marcellsouza/) 
+</div> -->
